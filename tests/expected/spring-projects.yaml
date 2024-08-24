@@ -1,0 +1,90 @@
+projects:
+  spring-ai:
+    url: https://github.com/spring-projects/spring-ai
+
+  spring-amqp:
+    url: https://github.com/spring-projects/spring-amqp
+
+  spring-aot-smoke-tests:
+    url: https://github.com/spring-projects/spring-aot-smoke-tests
+
+  spring-batch:
+    url: https://github.com/spring-projects/spring-batch
+
+  spring-boot:
+    url: https://github.com/spring-projects/spring-boot
+
+  spring-credhub:
+    url: https://github.com/spring-projects/spring-credhub
+
+  spring-data-cassandra:
+    url: https://github.com/spring-projects/spring-data-cassandra
+
+  spring-data-commons:
+    url: https://github.com/spring-projects/spring-data-commons
+
+  spring-data-examples:
+    url: https://github.com/spring-projects/spring-data-examples
+
+  spring-data-jpa:
+    url: https://github.com/spring-projects/spring-data-jpa
+
+  spring-data-keyvalue:
+    url: https://github.com/spring-projects/spring-data-keyvalue
+
+  spring-data-mongodb:
+    url: https://github.com/spring-projects/spring-data-mongodb
+
+  spring-data-neo4j:
+    url: https://github.com/spring-projects/spring-data-neo4j
+
+  spring-data-redis:
+    url: https://github.com/spring-projects/spring-data-redis
+
+  spring-data-relational:
+    url: https://github.com/spring-projects/spring-data-relational
+
+  spring-data-rest:
+    url: https://github.com/spring-projects/spring-data-rest
+
+  spring-framework:
+    url: https://github.com/spring-projects/spring-framework
+
+  spring-graphql:
+    url: https://github.com/spring-projects/spring-graphql
+
+  spring-integration:
+    url: https://github.com/spring-projects/spring-integration
+
+  spring-kafka:
+    url: https://github.com/spring-projects/spring-kafka
+
+  spring-ldap:
+    url: https://github.com/spring-projects/spring-ldap
+
+  spring-modulith:
+    url: https://github.com/spring-projects/spring-modulith
+
+  spring-pulsar:
+    url: https://github.com/spring-projects/spring-pulsar
+
+  spring-restdocs-samples:
+    url: https://github.com/spring-projects/spring-restdocs-samples
+
+  spring-security:
+    url: https://github.com/spring-projects/spring-security
+
+  spring-security-kerberos:
+    url: https://github.com/spring-projects/spring-security-kerberos
+
+  spring-security-samples:
+    url: https://github.com/spring-projects/spring-security-samples
+
+  spring-session:
+    url: https://github.com/spring-projects/spring-session
+
+  spring-shell:
+    url: https://github.com/spring-projects/spring-shell
+
+  sts4:
+    url: https://github.com/spring-projects/sts4
