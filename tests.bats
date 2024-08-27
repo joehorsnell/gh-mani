@@ -15,6 +15,19 @@ else
     diff_cmd="diff"
 fi
 
+# Function to check if a command is available, exiting with an error message if it is not
+check_dependency() {
+    command_name=$1
+    if ! command -v "$command_name" &> /dev/null; then
+        echo "Error: $command_name is not installed." >&2
+        exit 1
+    fi
+}
+
+# Check for required dependencies
+check_dependency "jq"
+check_dependency "diff"
+
 # Iterate over each JSON file in the input directory
 for input_file in "$input_dir"/*.json; do
     # Get the base name of the file without the extension
