@@ -3,6 +3,9 @@
 # Directory paths
 input_dir="tests/input"
 expected_dir="tests/expected"
+actual_dir="tmp/tests/actual"
+
+mkdir -p "$actual_dir"
 
 # Iterate over each JSON file in the input directory
 for input_file in "$input_dir"/*.json; do
@@ -19,6 +22,8 @@ for input_file in "$input_dir"/*.json; do
 
         # Run jq on the input file
         run jq --raw-output "$(<gh-mani.jq)" "$input_file"
+
+        echo "$output" > "${actual_dir}/${base_name}.yaml"
 
         # Compare the output with the expected output
         diff <(echo "$output") "$expected_file"
