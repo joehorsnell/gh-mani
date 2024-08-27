@@ -7,6 +7,14 @@ actual_dir="tmp/tests/actual"
 
 mkdir -p "$actual_dir"
 
+# Check if [delta][1] is installed for a nicer diff output on failing specs, otherwise use diff.
+# [1]: https://dandavison.github.io/delta/
+if command -v delta &> /dev/null; then
+    diff_cmd="delta --side-by-side"
+else
+    diff_cmd="diff"
+fi
+
 # Iterate over each JSON file in the input directory
 for input_file in "$input_dir"/*.json; do
     # Get the base name of the file without the extension
@@ -26,7 +34,8 @@ for input_file in "$input_dir"/*.json; do
         echo "$output" > "${actual_dir}/${base_name}.yaml"
 
         # Compare the output with the expected output
-        diff <(echo "$output") "$expected_file"
+        ${diff_cmd} <(echo "$output") "$expected_file"
+
         [ "$status" -eq 0 ]
     }
 done
