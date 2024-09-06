@@ -1,9 +1,9 @@
 #!/usr/bin/env bats
 
 # Directory paths
-input_dir="tests/input"
-expected_dir="tests/expected"
-actual_dir="tmp/tests/actual"
+input_dir="fixtures/input"
+expected_dir="fixtures/expected"
+actual_dir="tmp/fixtures/actual"
 
 mkdir -p "$actual_dir"
 
@@ -28,27 +28,30 @@ check_dependency() {
 check_dependency "jq"
 check_dependency "diff"
 
-# Iterate over each JSON file in the input directory
-for input_file in "$input_dir"/*.json; do
-    # Get the base name of the file without the extension
-    base_name=$(basename "$input_file" .json)
+perform_test() {
+    local fixture_name=$1
 
-    # Construct the expected output file path
-    expected_file="$expected_dir/$base_name.yaml"
+    local input_fixture="$input_dir/$fixture_name.json"
+    local expected_fixture="$expected_dir/$fixture_name.yaml"
 
-    # Define a test case for each file
-    @test "jq processes $base_name correctly" {
-        # Check if the expected file exists
-        [ -f "$expected_file" ]
+    # Check if the input file exists
+    [ -f "$input_fixture" ]
 
-        # Run jq on the input file
-        run jq --raw-output "$(<gh-mani.jq)" "$input_file"
+    # Check if the expected file exists
+    [ -f "$expected_fixture" ]
 
-        echo "$output" > "${actual_dir}/${base_name}.yaml"
+    # Run jq on the input file
+    run jq --raw-output "$(<gh-mani.jq)" "$input_fixture"
 
-        # Compare the output with the expected output
-        ${diff_cmd} <(echo "$output") "$expected_file"
+    # Save a copy of the generated output for debugging
+    echo "$output" > "${actual_dir}/${fixture_name}.yaml"
 
-        [ "$status" -eq 0 ]
-    }
-done
+    # Compare the actual output with the expected output
+    ${diff_cmd} <(echo "$output") "$expected_fixture"
+
+    [ "$status" -eq 0 ]
+}
+
+@test "basic processing of JSON with name and url" {
+    perform_test "spring-projects"
+}
