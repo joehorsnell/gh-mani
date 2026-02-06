@@ -1,0 +1,12 @@
+[
+    {
+      "name": "small-repo",
+      "diskUsage": 50,
+      "url": "https://github.com/dummy-org/small-repo"
+    },
+    {
+      "name": "large-repo",
+      "diskUsage": 1000,
+      "url": "https://github.com/dummy-org/large-repo"
+    }
+]

@@ -55,3 +55,8 @@ perform_test() {
 @test "basic processing of JSON with name and url" {
     perform_test "spring-projects"
 }
+
+@test "handling large repos with blobless clones when diskUsage is present" {
+    export BLOBLESS_CLONE_SIZE_LIMIT_IN_MB=100
+    perform_test "large-repos"
+}
