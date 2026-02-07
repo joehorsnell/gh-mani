@@ -4,13 +4,19 @@
     "name": "small-repo",
     "diskUsage": 50,
     "url": "https://github.com/dummy-org/small-repo",
-    "visibility": "PUBLIC"
+    "visibility": "PUBLIC",
+    "defaultBranchRef": {
+      "name": "main"
+    }
   },
   {
     "isArchived": true,
     "name": "large-repo",
     "diskUsage": 150000,
     "url": "https://github.com/dummy-org/large-repo",
-    "visibility": "PRIVATE"
+    "visibility": "PRIVATE",
+    "defaultBranchRef": {
+      "name": "master"
+    }
   }
 ]

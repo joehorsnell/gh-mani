@@ -63,5 +63,5 @@ fi
 
 gh repo list ${org_name:+ "$org_name"}\
  --limit "${repo_limit}"\
- --json name,url,diskUsage,isArchived,visibility\
+ --json name,url,diskUsage,isArchived,visibility,defaultBranchRef\
  --jq "$(<gh-mani.jq)"
