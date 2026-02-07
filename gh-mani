@@ -34,7 +34,7 @@ while [[ $# -gt 0 ]]; do
             shift 1
             ;;
         -h|--help)
-            echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] <org_name>"
+            echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] [org_name]"
             exit 0
             ;;
         -*)
@@ -53,11 +53,6 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-if [[ -z "$org_name" ]]; then
-    echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] <org_name>"
-    exit 1
-fi
-
 if [[ -n "$blobless_clone_size_limit_in_mb" ]]; then
     export BLOBLESS_CLONE_SIZE_LIMIT_IN_MB="$blobless_clone_size_limit_in_mb"
 fi
@@ -66,7 +61,7 @@ if [[ -z "${BLOBLESS_CLONE_SIZE_LIMIT_IN_MB:-}" ]]; then
     export BLOBLESS_CLONE_SIZE_LIMIT_IN_MB=500
 fi
 
-gh repo list "${org_name}"\
+gh repo list ${org_name:+ "$org_name"}\
  --limit "${repo_limit}"\
  --json name,url,diskUsage,isArchived,visibility\
  --jq "$(<gh-mani.jq)"
