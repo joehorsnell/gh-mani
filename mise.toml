@@ -1,0 +1,7 @@
+[tools]
+bats = "latest"
+jq = "latest"
+shellcheck = "latest"
+
+[settings]
+lockfile = true

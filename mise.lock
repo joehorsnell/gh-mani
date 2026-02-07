@@ -1,0 +1,12 @@
+[[tools.bats]]
+version = "1.13.0"
+backend = "asdf:bats"
+
+[[tools.jq]]
+version = "1.8.1"
+backend = "aqua:jqlang/jq"
+"platforms.macos-arm64" = { checksum = "sha256:a9fe3ea2f86dfc72f6728417521ec9067b343277152b114f4e98d8cb0e263603", url = "https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-macos-arm64"}
+
+[[tools.shellcheck]]
+version = "0.11.0"
+backend = "asdf:shellcheck"
