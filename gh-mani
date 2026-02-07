@@ -53,5 +53,5 @@ if [[ -z "${BLOBLESS_CLONE_SIZE_LIMIT_IN_MB:-}" ]]; then
 fi
 
 gh repo list "${org_name}"\
- --json name,url,diskUsage,isArchived\
+ --json name,url,diskUsage,isArchived,visibility\
  --jq "$(<gh-mani.jq)"

@@ -2,151 +2,181 @@
   {
     "name": "spring-data-neo4j",
     "url": "https://github.com/spring-projects/spring-data-neo4j",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-data-commons",
     "url": "https://github.com/spring-projects/spring-data-commons",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-framework",
     "url": "https://github.com/spring-projects/spring-framework",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-shell",
     "url": "https://github.com/spring-projects/spring-shell",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-session",
     "url": "https://github.com/spring-projects/spring-session",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-security",
     "url": "https://github.com/spring-projects/spring-security",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-security-samples",
     "url": "https://github.com/spring-projects/spring-security-samples",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-security-kerberos",
     "url": "https://github.com/spring-projects/spring-security-kerberos",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-integration",
     "url": "https://github.com/spring-projects/spring-integration",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-pulsar",
     "url": "https://github.com/spring-projects/spring-pulsar",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-kafka",
     "url": "https://github.com/spring-projects/spring-kafka",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-amqp",
     "url": "https://github.com/spring-projects/spring-amqp",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-ai",
     "url": "https://github.com/spring-projects/spring-ai",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-boot",
     "url": "https://github.com/spring-projects/spring-boot",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-modulith",
     "url": "https://github.com/spring-projects/spring-modulith",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-data-jpa",
     "url": "https://github.com/spring-projects/spring-data-jpa",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-data-examples",
     "url": "https://github.com/spring-projects/spring-data-examples",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-credhub",
     "url": "https://github.com/spring-projects/spring-credhub",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-ldap",
     "url": "https://github.com/spring-projects/spring-ldap",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-aot-smoke-tests",
     "url": "https://github.com/spring-projects/spring-aot-smoke-tests",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "sts4",
     "url": "https://github.com/spring-projects/sts4",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-data-relational",
     "url": "https://github.com/spring-projects/spring-data-relational",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-data-redis",
     "url": "https://github.com/spring-projects/spring-data-redis",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-restdocs-samples",
     "url": "https://github.com/spring-projects/spring-restdocs-samples",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-graphql",
     "url": "https://github.com/spring-projects/spring-graphql",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-batch",
     "url": "https://github.com/spring-projects/spring-batch",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-data-cassandra",
     "url": "https://github.com/spring-projects/spring-data-cassandra",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-data-rest",
     "url": "https://github.com/spring-projects/spring-data-rest",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-data-keyvalue",
     "url": "https://github.com/spring-projects/spring-data-keyvalue",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   },
   {
     "name": "spring-data-mongodb",
     "url": "https://github.com/spring-projects/spring-data-mongodb",
-    "isArchived": false
+    "isArchived": false,
+    "visibility": "PUBLIC"
   }
 ]

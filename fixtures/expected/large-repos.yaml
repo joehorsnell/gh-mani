@@ -3,9 +3,12 @@ projects:
     url: https://github.com/dummy-org/large-repo
     tags:
       - isArchived=true
+      - visibility=PRIVATE
     clone: git clone --filter=blob:none https://github.com/dummy-org/large-repo
 
   small-repo:
     url: https://github.com/dummy-org/small-repo
     tags:
       - isArchived=false
+      - visibility=PUBLIC
+
