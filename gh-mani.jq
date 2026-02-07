@@ -1,11 +1,22 @@
-  "projects:",
-  (
-    sort_by(.name)
-    | map("  \(.name):\n    url: \(.url)\n    tags:\n      - isArchived=\(.isArchived // false)\n      - visibility=\(.visibility // "PUBLIC")\n      - defaultBranch=\(.defaultBranchRef.name // "")\n      - isFork=\(.isFork // false)\n" +
-      (if .diskUsage and (.diskUsage > ((env.BLOBLESS_CLONE_SIZE_LIMIT_IN_MB // "100" | tonumber) * 1024))
-       then "    clone: git clone --filter=blob:none \(.url)\n"
-       else ""
-       end)
-    )
-    | .[]
-  )
+def repo_lines:
+  [
+    "  \(.name):",
+    "    url: \(.url)",
+    "    tags:",
+    "      - isArchived=\(.isArchived // false)",
+    "      - visibility=\(.visibility // "PUBLIC")",
+    "      - defaultBranch=\(.defaultBranchRef.name // "")",
+    "      - isFork=\(.isFork // false)",
+    ""
+  ]
+  + (if .diskUsage and (.diskUsage > ((env.BLOBLESS_CLONE_SIZE_LIMIT_IN_MB // "100" | tonumber) * 1024))
+     then ["    clone: git clone --filter=blob:none \(.url)"]
+     else []
+     end);
+
+"projects:",
+(
+  sort_by(.name)
+  | map(repo_lines | join("\n"))
+  | .[]
+)
