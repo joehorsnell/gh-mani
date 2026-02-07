@@ -6,7 +6,7 @@
     },
     {
       "name": "large-repo",
-      "diskUsage": 1000,
+      "diskUsage": 150000,
       "url": "https://github.com/dummy-org/large-repo"
     }
 ]
