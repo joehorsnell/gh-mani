@@ -1,9 +1,18 @@
+def topic_lines:
+  (.repositoryTopics // []
+   | map(.name)
+   | sort
+   | map("      - topic=\(.)"));
+
 def tag_lines:
   [
     "    tags:",
     "      - defaultBranch=\(.defaultBranchRef.name // "")",
     "      - isArchived=\(.isArchived // false)",
-    "      - isFork=\(.isFork // false)",
+    "      - isFork=\(.isFork // false)"
+  ]
+  + topic_lines
+  + [
     "      - visibility=\(.visibility // "PUBLIC")"
   ];
 

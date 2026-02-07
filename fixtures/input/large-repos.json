@@ -8,7 +8,8 @@
     "defaultBranchRef": {
       "name": "main"
     },
-    "isFork": false
+    "isFork": false,
+    "repositoryTopics": []
   },
   {
     "isArchived": true,
@@ -19,6 +20,14 @@
     "defaultBranchRef": {
       "name": "master"
     },
-    "isFork": true
+    "isFork": true,
+    "repositoryTopics": [
+      {
+        "name": "security"
+      },
+      {
+        "name": "java"
+      }
+    ]
   }
 ]

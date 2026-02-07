@@ -5,6 +5,7 @@ blobless_clone_size_limit_in_mb=""
 repo_limit="9999"
 gh_repo_filters=()
 no_tags="false"
+include_topic_tags="true"
 org_name=""
 
 while [[ $# -gt 0 ]]; do
@@ -43,8 +44,12 @@ while [[ $# -gt 0 ]]; do
             no_tags="true"
             shift 1
             ;;
+        --no-topic-tags)
+            include_topic_tags="false"
+            shift 1
+            ;;
         -h|--help)
-            echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] [--archived|--no-archived] [--fork|--source] [--no-tags] [org_name]"
+            echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] [--archived|--no-archived] [--fork|--source] [--no-tags] [--no-topic-tags] [org_name]"
             exit 0
             ;;
         -*)
@@ -73,8 +78,22 @@ fi
 
 export NO_TAGS="$no_tags"
 
+json_fields=(
+    name
+    url
+    diskUsage
+    isArchived
+    visibility
+    defaultBranchRef
+    isFork
+)
+
+if [[ "$include_topic_tags" == "true" ]]; then
+    json_fields+=(repositoryTopics)
+fi
+
 gh repo list ${org_name:+ "$org_name"}\
  --limit "${repo_limit}"\
  "${gh_repo_filters[@]}"\
- --json name,url,diskUsage,isArchived,visibility,defaultBranchRef,isFork\
+ --json "$(IFS=,; echo "${json_fields[*]}")"\
  --jq "$(<gh-mani.jq)"

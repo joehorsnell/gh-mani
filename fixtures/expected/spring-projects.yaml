@@ -37,6 +37,8 @@ projects:
       - defaultBranch=main
       - isArchived=false
       - isFork=false
+      - topic=boot
+      - topic=spring
       - visibility=PUBLIC
 
   spring-credhub:
@@ -133,6 +135,9 @@ projects:
       - defaultBranch=main
       - isArchived=false
       - isFork=false
+      - topic=framework
+      - topic=java
+      - topic=spring
       - visibility=PUBLIC
 
   spring-graphql:

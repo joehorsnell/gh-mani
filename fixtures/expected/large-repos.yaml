@@ -5,9 +5,11 @@ projects:
       - defaultBranch=master
       - isArchived=true
       - isFork=true
+      - topic=java
+      - topic=security
       - visibility=PRIVATE
-
     clone: git clone --filter=blob:none https://github.com/dummy-org/large-repo
+
   small-repo:
     url: https://github.com/dummy-org/small-repo
     tags:
