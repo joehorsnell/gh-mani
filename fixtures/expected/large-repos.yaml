@@ -7,7 +7,7 @@ projects:
       - isFork=true
       - topic=java
       - topic=security
-      - visibility=PRIVATE
+      - visibility=private
     clone: git clone --filter=blob:none https://github.com/dummy-org/large-repo
 
   small-repo:
@@ -16,4 +16,4 @@ projects:
       - defaultBranch=main
       - isArchived=false
       - isFork=false
-      - visibility=PUBLIC
+      - visibility=public

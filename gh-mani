@@ -2,7 +2,7 @@
 set -e
 
 blobless_clone_size_limit_in_mb=""
-repo_limit="9999"
+repo_limit="1000"
 gh_repo_filters=()
 no_tags="false"
 include_topic_tags="true"

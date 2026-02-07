@@ -13,7 +13,7 @@ def tag_lines:
   ]
   + topic_lines
   + [
-    "      - visibility=\(.visibility // "PUBLIC")"
+    "      - visibility=\((.visibility // "public") | ascii_downcase)"
   ];
 
 def repo_lines:
