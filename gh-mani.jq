@@ -3,10 +3,10 @@ def repo_lines:
     "  \(.name):",
     "    url: \(.url)",
     "    tags:",
-    "      - isArchived=\(.isArchived // false)",
-    "      - visibility=\(.visibility // "PUBLIC")",
     "      - defaultBranch=\(.defaultBranchRef.name // "")",
+    "      - isArchived=\(.isArchived // false)",
     "      - isFork=\(.isFork // false)",
+    "      - visibility=\(.visibility // "PUBLIC")",
     ""
   ]
   + (if .diskUsage and (.diskUsage > ((env.BLOBLESS_CLONE_SIZE_LIMIT_IN_MB // "100" | tonumber) * 1024))

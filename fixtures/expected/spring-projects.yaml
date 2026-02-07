@@ -2,239 +2,239 @@ projects:
   spring-ai:
     url: https://github.com/spring-projects/spring-ai
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-amqp:
     url: https://github.com/spring-projects/spring-amqp
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-aot-smoke-tests:
     url: https://github.com/spring-projects/spring-aot-smoke-tests
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-batch:
     url: https://github.com/spring-projects/spring-batch
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-boot:
     url: https://github.com/spring-projects/spring-boot
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-credhub:
     url: https://github.com/spring-projects/spring-credhub
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-data-cassandra:
     url: https://github.com/spring-projects/spring-data-cassandra
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-data-commons:
     url: https://github.com/spring-projects/spring-data-commons
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-data-examples:
     url: https://github.com/spring-projects/spring-data-examples
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-data-jpa:
     url: https://github.com/spring-projects/spring-data-jpa
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-data-keyvalue:
     url: https://github.com/spring-projects/spring-data-keyvalue
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-data-mongodb:
     url: https://github.com/spring-projects/spring-data-mongodb
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-data-neo4j:
     url: https://github.com/spring-projects/spring-data-neo4j
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-data-redis:
     url: https://github.com/spring-projects/spring-data-redis
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-data-relational:
     url: https://github.com/spring-projects/spring-data-relational
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-data-rest:
     url: https://github.com/spring-projects/spring-data-rest
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-framework:
     url: https://github.com/spring-projects/spring-framework
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-graphql:
     url: https://github.com/spring-projects/spring-graphql
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-integration:
     url: https://github.com/spring-projects/spring-integration
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-kafka:
     url: https://github.com/spring-projects/spring-kafka
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-ldap:
     url: https://github.com/spring-projects/spring-ldap
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-modulith:
     url: https://github.com/spring-projects/spring-modulith
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-pulsar:
     url: https://github.com/spring-projects/spring-pulsar
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-restdocs-samples:
     url: https://github.com/spring-projects/spring-restdocs-samples
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-security:
     url: https://github.com/spring-projects/spring-security
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-security-kerberos:
     url: https://github.com/spring-projects/spring-security-kerberos
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-security-samples:
     url: https://github.com/spring-projects/spring-security-samples
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-session:
     url: https://github.com/spring-projects/spring-session
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   spring-shell:
     url: https://github.com/spring-projects/spring-shell
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
 
   sts4:
     url: https://github.com/spring-projects/sts4
     tags:
-      - isArchived=false
-      - visibility=PUBLIC
       - defaultBranch=main
+      - isArchived=false
       - isFork=false
+      - visibility=PUBLIC
