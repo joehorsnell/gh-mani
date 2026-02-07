@@ -1,5 +1,6 @@
 [tools]
 "aqua:bats-core/bats-core" = "latest"
+delta = "latest"
 jq = "latest"
 shellcheck = "latest"
 
