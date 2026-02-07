@@ -1,90 +1,150 @@
 projects:
   spring-ai:
     url: https://github.com/spring-projects/spring-ai
+    tags:
+      - isArchived=false
 
   spring-amqp:
     url: https://github.com/spring-projects/spring-amqp
+    tags:
+      - isArchived=false
 
   spring-aot-smoke-tests:
     url: https://github.com/spring-projects/spring-aot-smoke-tests
+    tags:
+      - isArchived=false
 
   spring-batch:
     url: https://github.com/spring-projects/spring-batch
+    tags:
+      - isArchived=false
 
   spring-boot:
     url: https://github.com/spring-projects/spring-boot
+    tags:
+      - isArchived=false
 
   spring-credhub:
     url: https://github.com/spring-projects/spring-credhub
+    tags:
+      - isArchived=false
 
   spring-data-cassandra:
     url: https://github.com/spring-projects/spring-data-cassandra
+    tags:
+      - isArchived=false
 
   spring-data-commons:
     url: https://github.com/spring-projects/spring-data-commons
+    tags:
+      - isArchived=false
 
   spring-data-examples:
     url: https://github.com/spring-projects/spring-data-examples
+    tags:
+      - isArchived=false
 
   spring-data-jpa:
     url: https://github.com/spring-projects/spring-data-jpa
+    tags:
+      - isArchived=false
 
   spring-data-keyvalue:
     url: https://github.com/spring-projects/spring-data-keyvalue
+    tags:
+      - isArchived=false
 
   spring-data-mongodb:
     url: https://github.com/spring-projects/spring-data-mongodb
+    tags:
+      - isArchived=false
 
   spring-data-neo4j:
     url: https://github.com/spring-projects/spring-data-neo4j
+    tags:
+      - isArchived=false
 
   spring-data-redis:
     url: https://github.com/spring-projects/spring-data-redis
+    tags:
+      - isArchived=false
 
   spring-data-relational:
     url: https://github.com/spring-projects/spring-data-relational
+    tags:
+      - isArchived=false
 
   spring-data-rest:
     url: https://github.com/spring-projects/spring-data-rest
+    tags:
+      - isArchived=false
 
   spring-framework:
     url: https://github.com/spring-projects/spring-framework
+    tags:
+      - isArchived=false
 
   spring-graphql:
     url: https://github.com/spring-projects/spring-graphql
+    tags:
+      - isArchived=false
 
   spring-integration:
     url: https://github.com/spring-projects/spring-integration
+    tags:
+      - isArchived=false
 
   spring-kafka:
     url: https://github.com/spring-projects/spring-kafka
+    tags:
+      - isArchived=false
 
   spring-ldap:
     url: https://github.com/spring-projects/spring-ldap
+    tags:
+      - isArchived=false
 
   spring-modulith:
     url: https://github.com/spring-projects/spring-modulith
+    tags:
+      - isArchived=false
 
   spring-pulsar:
     url: https://github.com/spring-projects/spring-pulsar
+    tags:
+      - isArchived=false
 
   spring-restdocs-samples:
     url: https://github.com/spring-projects/spring-restdocs-samples
+    tags:
+      - isArchived=false
 
   spring-security:
     url: https://github.com/spring-projects/spring-security
+    tags:
+      - isArchived=false
 
   spring-security-kerberos:
     url: https://github.com/spring-projects/spring-security-kerberos
+    tags:
+      - isArchived=false
 
   spring-security-samples:
     url: https://github.com/spring-projects/spring-security-samples
+    tags:
+      - isArchived=false
 
   spring-session:
     url: https://github.com/spring-projects/spring-session
+    tags:
+      - isArchived=false
 
   spring-shell:
     url: https://github.com/spring-projects/spring-shell
+    tags:
+      - isArchived=false
 
   sts4:
     url: https://github.com/spring-projects/sts4
+    tags:
+      - isArchived=false

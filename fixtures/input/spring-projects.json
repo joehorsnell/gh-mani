@@ -1,123 +1,152 @@
 [
-    {
-      "name": "spring-data-neo4j",
-      "url": "https://github.com/spring-projects/spring-data-neo4j"
-    },
-    {
-      "name": "spring-data-commons",
-      "url": "https://github.com/spring-projects/spring-data-commons"
-    },
-    {
-      "name": "spring-framework",
-      "url": "https://github.com/spring-projects/spring-framework"
-    },
-    {
-      "name": "spring-shell",
-      "url": "https://github.com/spring-projects/spring-shell"
-    },
-    {
-      "name": "spring-session",
-      "url": "https://github.com/spring-projects/spring-session"
-    },
-    {
-      "name": "spring-security",
-      "url": "https://github.com/spring-projects/spring-security"
-    },
-    {
-      "name": "spring-security-samples",
-      "url": "https://github.com/spring-projects/spring-security-samples"
-    },
-    {
-      "name": "spring-security-kerberos",
-      "url": "https://github.com/spring-projects/spring-security-kerberos"
-    },
-    {
-      "name": "spring-integration",
-      "url": "https://github.com/spring-projects/spring-integration"
-    },
-    {
-      "name": "spring-pulsar",
-      "url": "https://github.com/spring-projects/spring-pulsar"
-    },
-    {
-      "name": "spring-kafka",
-      "url": "https://github.com/spring-projects/spring-kafka"
-    },
-    {
-      "name": "spring-amqp",
-      "url": "https://github.com/spring-projects/spring-amqp"
-    },
-    {
-      "name": "spring-ai",
-      "url": "https://github.com/spring-projects/spring-ai"
-    },
-    {
-      "name": "spring-boot",
-      "url": "https://github.com/spring-projects/spring-boot"
-    },
-    {
-      "name": "spring-modulith",
-      "url": "https://github.com/spring-projects/spring-modulith"
-    },
-    {
-      "name": "spring-data-jpa",
-      "url": "https://github.com/spring-projects/spring-data-jpa"
-    },
-    {
-      "name": "spring-data-examples",
-      "url": "https://github.com/spring-projects/spring-data-examples"
-    },
-    {
-      "name": "spring-credhub",
-      "url": "https://github.com/spring-projects/spring-credhub"
-    },
-    {
-      "name": "spring-ldap",
-      "url": "https://github.com/spring-projects/spring-ldap"
-    },
-    {
-      "name": "spring-aot-smoke-tests",
-      "url": "https://github.com/spring-projects/spring-aot-smoke-tests"
-    },
-    {
-      "name": "sts4",
-      "url": "https://github.com/spring-projects/sts4"
-    },
-    {
-      "name": "spring-data-relational",
-      "url": "https://github.com/spring-projects/spring-data-relational"
-    },
-    {
-      "name": "spring-data-redis",
-      "url": "https://github.com/spring-projects/spring-data-redis"
-    },
-    {
-      "name": "spring-restdocs-samples",
-      "url": "https://github.com/spring-projects/spring-restdocs-samples"
-    },
-    {
-      "name": "spring-graphql",
-      "url": "https://github.com/spring-projects/spring-graphql"
-    },
-    {
-      "name": "spring-batch",
-      "url": "https://github.com/spring-projects/spring-batch"
-    },
-    {
-      "name": "spring-data-cassandra",
-      "url": "https://github.com/spring-projects/spring-data-cassandra"
-    },
-    {
-      "name": "spring-data-rest",
-      "url": "https://github.com/spring-projects/spring-data-rest"
-    },
-    {
-      "name": "spring-data-keyvalue",
-      "url": "https://github.com/spring-projects/spring-data-keyvalue"
-    },
-    {
-      "name": "spring-data-mongodb",
-      "url": "https://github.com/spring-projects/spring-data-mongodb"
-    }
-  ]
-  
+  {
+    "name": "spring-data-neo4j",
+    "url": "https://github.com/spring-projects/spring-data-neo4j",
+    "isArchived": false
+  },
+  {
+    "name": "spring-data-commons",
+    "url": "https://github.com/spring-projects/spring-data-commons",
+    "isArchived": false
+  },
+  {
+    "name": "spring-framework",
+    "url": "https://github.com/spring-projects/spring-framework",
+    "isArchived": false
+  },
+  {
+    "name": "spring-shell",
+    "url": "https://github.com/spring-projects/spring-shell",
+    "isArchived": false
+  },
+  {
+    "name": "spring-session",
+    "url": "https://github.com/spring-projects/spring-session",
+    "isArchived": false
+  },
+  {
+    "name": "spring-security",
+    "url": "https://github.com/spring-projects/spring-security",
+    "isArchived": false
+  },
+  {
+    "name": "spring-security-samples",
+    "url": "https://github.com/spring-projects/spring-security-samples",
+    "isArchived": false
+  },
+  {
+    "name": "spring-security-kerberos",
+    "url": "https://github.com/spring-projects/spring-security-kerberos",
+    "isArchived": false
+  },
+  {
+    "name": "spring-integration",
+    "url": "https://github.com/spring-projects/spring-integration",
+    "isArchived": false
+  },
+  {
+    "name": "spring-pulsar",
+    "url": "https://github.com/spring-projects/spring-pulsar",
+    "isArchived": false
+  },
+  {
+    "name": "spring-kafka",
+    "url": "https://github.com/spring-projects/spring-kafka",
+    "isArchived": false
+  },
+  {
+    "name": "spring-amqp",
+    "url": "https://github.com/spring-projects/spring-amqp",
+    "isArchived": false
+  },
+  {
+    "name": "spring-ai",
+    "url": "https://github.com/spring-projects/spring-ai",
+    "isArchived": false
+  },
+  {
+    "name": "spring-boot",
+    "url": "https://github.com/spring-projects/spring-boot",
+    "isArchived": false
+  },
+  {
+    "name": "spring-modulith",
+    "url": "https://github.com/spring-projects/spring-modulith",
+    "isArchived": false
+  },
+  {
+    "name": "spring-data-jpa",
+    "url": "https://github.com/spring-projects/spring-data-jpa",
+    "isArchived": false
+  },
+  {
+    "name": "spring-data-examples",
+    "url": "https://github.com/spring-projects/spring-data-examples",
+    "isArchived": false
+  },
+  {
+    "name": "spring-credhub",
+    "url": "https://github.com/spring-projects/spring-credhub",
+    "isArchived": false
+  },
+  {
+    "name": "spring-ldap",
+    "url": "https://github.com/spring-projects/spring-ldap",
+    "isArchived": false
+  },
+  {
+    "name": "spring-aot-smoke-tests",
+    "url": "https://github.com/spring-projects/spring-aot-smoke-tests",
+    "isArchived": false
+  },
+  {
+    "name": "sts4",
+    "url": "https://github.com/spring-projects/sts4",
+    "isArchived": false
+  },
+  {
+    "name": "spring-data-relational",
+    "url": "https://github.com/spring-projects/spring-data-relational",
+    "isArchived": false
+  },
+  {
+    "name": "spring-data-redis",
+    "url": "https://github.com/spring-projects/spring-data-redis",
+    "isArchived": false
+  },
+  {
+    "name": "spring-restdocs-samples",
+    "url": "https://github.com/spring-projects/spring-restdocs-samples",
+    "isArchived": false
+  },
+  {
+    "name": "spring-graphql",
+    "url": "https://github.com/spring-projects/spring-graphql",
+    "isArchived": false
+  },
+  {
+    "name": "spring-batch",
+    "url": "https://github.com/spring-projects/spring-batch",
+    "isArchived": false
+  },
+  {
+    "name": "spring-data-cassandra",
+    "url": "https://github.com/spring-projects/spring-data-cassandra",
+    "isArchived": false
+  },
+  {
+    "name": "spring-data-rest",
+    "url": "https://github.com/spring-projects/spring-data-rest",
+    "isArchived": false
+  },
+  {
+    "name": "spring-data-keyvalue",
+    "url": "https://github.com/spring-projects/spring-data-keyvalue",
+    "isArchived": false
+  },
+  {
+    "name": "spring-data-mongodb",
+    "url": "https://github.com/spring-projects/spring-data-mongodb",
+    "isArchived": false
+  }
+]

@@ -1,10 +1,12 @@
 [
     {
+      "isArchived": false,
       "name": "small-repo",
       "diskUsage": 50,
       "url": "https://github.com/dummy-org/small-repo"
     },
     {
+      "isArchived": true,
       "name": "large-repo",
       "diskUsage": 150000,
       "url": "https://github.com/dummy-org/large-repo"
