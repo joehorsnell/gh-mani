@@ -2,6 +2,7 @@
 set -e
 
 blobless_clone_size_limit_in_mb=""
+repo_limit="9999"
 org_name=""
 
 while [[ $# -gt 0 ]]; do
@@ -19,8 +20,21 @@ while [[ $# -gt 0 ]]; do
             blobless_clone_size_limit_in_mb="${1#*=}"
             shift 1
             ;;
+        --limit)
+            if [[ -n "${2:-}" ]]; then
+                repo_limit="$2"
+                shift 2
+            else
+                echo "Error: --limit requires a value." >&2
+                exit 1
+            fi
+            ;;
+        --limit=*)
+            repo_limit="${1#*=}"
+            shift 1
+            ;;
         -h|--help)
-            echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] <org_name>"
+            echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] <org_name>"
             exit 0
             ;;
         -*)
@@ -40,7 +54,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [[ -z "$org_name" ]]; then
-    echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] <org_name>"
+    echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] <org_name>"
     exit 1
 fi
 
@@ -53,5 +67,6 @@ if [[ -z "${BLOBLESS_CLONE_SIZE_LIMIT_IN_MB:-}" ]]; then
 fi
 
 gh repo list "${org_name}"\
+ --limit "${repo_limit}"\
  --json name,url,diskUsage,isArchived,visibility\
  --jq "$(<gh-mani.jq)"
