@@ -1,5 +1,5 @@
 [tools]
-bats = "latest"
+"aqua:bats-core/bats-core" = "latest"
 jq = "latest"
 shellcheck = "latest"
 
