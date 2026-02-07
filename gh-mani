@@ -3,6 +3,7 @@ set -e
 
 blobless_clone_size_limit_in_mb=""
 repo_limit="9999"
+gh_repo_filters=()
 org_name=""
 
 while [[ $# -gt 0 ]]; do
@@ -33,8 +34,12 @@ while [[ $# -gt 0 ]]; do
             repo_limit="${1#*=}"
             shift 1
             ;;
+        --archived|--no-archived|--fork|--source)
+            gh_repo_filters+=("$1")
+            shift 1
+            ;;
         -h|--help)
-            echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] [org_name]"
+            echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] [--archived|--no-archived] [--fork|--source] [org_name]"
             exit 0
             ;;
         -*)
@@ -63,5 +68,6 @@ fi
 
 gh repo list ${org_name:+ "$org_name"}\
  --limit "${repo_limit}"\
- --json name,url,diskUsage,isArchived,visibility,defaultBranchRef\
+ "${gh_repo_filters[@]}"\
+ --json name,url,diskUsage,isArchived,visibility,defaultBranchRef,isFork\
  --jq "$(<gh-mani.jq)"
