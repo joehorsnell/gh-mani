@@ -1,0 +1,33 @@
+[
+  {
+    "isArchived": false,
+    "name": "small-repo",
+    "diskUsage": 50,
+    "url": "https://github.com/dummy-org/small-repo",
+    "visibility": "PUBLIC",
+    "defaultBranchRef": {
+      "name": "main"
+    },
+    "isFork": false,
+    "repositoryTopics": []
+  },
+  {
+    "isArchived": true,
+    "name": "large-repo",
+    "diskUsage": 150000,
+    "url": "https://github.com/dummy-org/large-repo",
+    "visibility": "PRIVATE",
+    "defaultBranchRef": {
+      "name": "master"
+    },
+    "isFork": true,
+    "repositoryTopics": [
+      {
+        "name": "security"
+      },
+      {
+        "name": "java"
+      }
+    ]
+  }
+]

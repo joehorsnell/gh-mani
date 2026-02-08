@@ -1,0 +1,19 @@
+projects:
+  large-repo:
+    url: https://github.com/dummy-org/large-repo
+    tags:
+      - defaultBranch=master
+      - isArchived=true
+      - isFork=true
+      - topic=java
+      - topic=security
+      - visibility=private
+    clone: git clone --filter=blob:none https://github.com/dummy-org/large-repo
+
+  small-repo:
+    url: https://github.com/dummy-org/small-repo
+    tags:
+      - defaultBranch=main
+      - isArchived=false
+      - isFork=false
+      - visibility=public

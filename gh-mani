@@ -1,0 +1,130 @@
+#!/usr/bin/env bash
+set -e
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+blobless_clone_size_limit_in_mb=""
+repo_limit="1000"
+gh_repo_filters=()
+no_tags="false"
+include_topic_tags="true"
+output_file=""
+org_name=""
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --blobless-clone-size-limit-in-mb)
+            if [[ -n "${2:-}" ]]; then
+                blobless_clone_size_limit_in_mb="$2"
+                shift 2
+            else
+                echo "Error: --blobless-clone-size-limit-in-mb requires a value." >&2
+                exit 1
+            fi
+            ;;
+        --blobless-clone-size-limit-in-mb=*)
+            blobless_clone_size_limit_in_mb="${1#*=}"
+            shift 1
+            ;;
+        --limit)
+            if [[ -n "${2:-}" ]]; then
+                repo_limit="$2"
+                shift 2
+            else
+                echo "Error: --limit requires a value." >&2
+                exit 1
+            fi
+            ;;
+        --limit=*)
+            repo_limit="${1#*=}"
+            shift 1
+            ;;
+        --archived|--no-archived|--fork|--source)
+            gh_repo_filters+=("$1")
+            shift 1
+            ;;
+        --no-tags)
+            no_tags="true"
+            shift 1
+            ;;
+        --no-topic-tags)
+            include_topic_tags="false"
+            shift 1
+            ;;
+        --output)
+            if [[ -n "${2:-}" ]]; then
+                output_file="$2"
+                shift 2
+            else
+                echo "Error: --output requires a value." >&2
+                exit 1
+            fi
+            ;;
+        --output=*)
+            output_file="${1#*=}"
+            shift 1
+            ;;
+        -h|--help)
+            echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] [--archived|--no-archived] [--fork|--source] [--no-tags] [--no-topic-tags] [--output <file>] [org_name]"
+            exit 0
+            ;;
+        -*)
+            echo "Error: Unknown option: $1" >&2
+            exit 1
+            ;;
+        *)
+            if [[ -z "$org_name" ]]; then
+                org_name="$1"
+            else
+                echo "Error: Unexpected argument: $1" >&2
+                exit 1
+            fi
+            shift 1
+            ;;
+    esac
+done
+
+if [[ -n "$blobless_clone_size_limit_in_mb" ]]; then
+    export BLOBLESS_CLONE_SIZE_LIMIT_IN_MB="$blobless_clone_size_limit_in_mb"
+fi
+
+if [[ -z "${BLOBLESS_CLONE_SIZE_LIMIT_IN_MB:-}" ]]; then
+    export BLOBLESS_CLONE_SIZE_LIMIT_IN_MB=500
+fi
+
+export NO_TAGS="$no_tags"
+
+json_fields=(
+    name
+    url
+    diskUsage
+    isArchived
+    visibility
+    defaultBranchRef
+    isFork
+)
+
+if [[ "$include_topic_tags" == "true" ]]; then
+    json_fields+=(repositoryTopics)
+fi
+
+json_fields_csv=$(IFS=,; printf '%s' "${json_fields[*]}")
+
+cmd=(gh repo list)
+if [[ -n "$org_name" ]]; then
+    cmd+=("$org_name")
+fi
+
+cmd+=(
+    --limit "$repo_limit"
+    "${gh_repo_filters[@]}"
+    --json "$json_fields_csv"
+    --jq "$(<"$SCRIPT_DIR/gh-mani.jq")"
+)
+
+if [[ -n "$output_file" ]]; then
+    "${cmd[@]}" > "$output_file"
+else
+    "${cmd[@]}"
+fi
