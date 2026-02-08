@@ -1,17 +1,15 @@
 name: CI
 
 on:
-  push:
   pull_request:
+  push:
+    branches: [main]
 
 jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: jdx/mise-action@v3.6.1
-        with:
-          version: latest
-          install: true
+      - uses: jdx/mise-action@v3
       - name: Run CI tasks
         run: mise run ci
