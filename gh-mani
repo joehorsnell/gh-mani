@@ -92,8 +92,18 @@ if [[ "$include_topic_tags" == "true" ]]; then
     json_fields+=(repositoryTopics)
 fi
 
-gh repo list ${org_name:+ "$org_name"}\
- --limit "${repo_limit}"\
- "${gh_repo_filters[@]}"\
- --json "$(IFS=,; echo "${json_fields[*]}")"\
- --jq "$(<gh-mani.jq)"
+json_fields_csv=$(IFS=,; printf '%s' "${json_fields[*]}")
+
+cmd=(gh repo list)
+if [[ -n "$org_name" ]]; then
+    cmd+=("$org_name")
+fi
+
+cmd+=(
+    --limit "$repo_limit"
+    "${gh_repo_filters[@]}"
+    --json "$json_fields_csv"
+    --jq "$(<gh-mani.jq)"
+)
+
+"${cmd[@]}"
