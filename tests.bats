@@ -31,14 +31,6 @@ teardown() {
     done
 }
 
-# Check if [delta][1] is installed for a nicer diff output on failing specs, otherwise use diff.
-# [1]: https://dandavison.github.io/delta/
-if command -v delta &> /dev/null; then
-    diff_cmd="delta --side-by-side"
-else
-    diff_cmd="diff"
-fi
-
 # Function to check if a command is available, exiting with an error message if it is not
 check_dependency() {
     local command_name="$1"
@@ -71,8 +63,15 @@ perform_test() {
     # Save a copy of the generated output for debugging
     echo "$output" > "${actual_dir}/${fixture_name}.yaml"
 
-    # Compare the actual output with the expected output
-    run ${diff_cmd} <(echo "$output") "$expected_fixture"
+    # Compare the actual output with the expected output using diff
+    # If delta is available and the comparison fails, show the diff through delta for better visualization
+    run diff <(echo "$output") "$expected_fixture"
+    if [ "$status" -ne 0 ] && command -v delta &> /dev/null; then
+        # Show a nicer diff output using delta if available
+        # [delta][1] is a syntax-highlighting pager for git and diff output
+        # [1]: https://dandavison.github.io/delta/
+        diff <(echo "$output") "$expected_fixture" | delta --side-by-side
+    fi
     [ "$status" -eq 0 ]
 }
 
