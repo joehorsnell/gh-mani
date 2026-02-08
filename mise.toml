@@ -6,3 +6,15 @@ shellcheck = "latest"
 
 [settings]
 lockfile = true
+
+[tasks.lint]
+description = "Run shellcheck"
+run = "shellcheck gh-mani"
+
+[tasks.test]
+description = "Run bats tests"
+run = "bats ."
+
+[tasks.ci]
+description = "Run lint and test"
+depends = ["lint", "test"]
