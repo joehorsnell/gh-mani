@@ -17,7 +17,7 @@ fi
 
 # Function to check if a command is available, exiting with an error message if it is not
 check_dependency() {
-    command_name=$1
+    local command_name="$1"
     if ! command -v "$command_name" &> /dev/null; then
         echo "Error: $command_name is not installed." >&2
         exit 1
@@ -42,13 +42,13 @@ perform_test() {
 
     # Run jq on the input file
     run jq --raw-output "$(<gh-mani.jq)" "$input_fixture"
+    [ "$status" -eq 0 ]
 
     # Save a copy of the generated output for debugging
     echo "$output" > "${actual_dir}/${fixture_name}.yaml"
 
     # Compare the actual output with the expected output
-    ${diff_cmd} <(echo "$output") "$expected_fixture"
-
+    run ${diff_cmd} <(echo "$output") "$expected_fixture"
     [ "$status" -eq 0 ]
 }
 

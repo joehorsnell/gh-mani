@@ -1,8 +1,8 @@
 #!/usr/bin/env bats
 
 # Directory paths
-input_dir="tests/input"
-expected_dir="tests/expected"
+input_dir="fixtures/input"
+expected_dir="fixtures/expected"
 actual_dir="tmp/tests/actual"
 
 mkdir -p "$actual_dir"
@@ -18,7 +18,7 @@ mkdir -p "$actual_dir"
     # Construct the expected output file path
     expected_file="$expected_dir/$base_name.yaml"
 
-    input_file="$input_file" base_name="$base_name" expected_file="$expected_file" run bats -t test_new.bats
+    input_file="$input_file" base_name="$base_name" expected_file="$expected_file" run bats -t .test_new.bats
 
     echo "# $output" >&3
     echo "#" >&3
