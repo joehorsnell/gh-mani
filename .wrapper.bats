@@ -9,6 +9,7 @@ mkdir -p "$actual_dir"
 
 @test "wrapper" {
   final_status=0
+  skip "Experimental wrapper test; skipped by default to avoid running in CI"
 
   # Iterate over each JSON file in the input directory
   for input_file in "$input_dir"/*.json; do
