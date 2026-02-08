@@ -67,8 +67,9 @@ while [[ $# -gt 0 ]]; do
             ;;
         -h|--help)
             cat <<'EOF'
-Usage: gh mani [options] [org_name]
+Usage: gh mani [org_name] [options]
 
+Options may appear before or after org_name.
 Options:
   --blobless-clone-size-limit-in-mb <mb>
       Add blobless clone command for repos over this size (MB).
