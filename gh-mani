@@ -6,6 +6,7 @@ repo_limit="1000"
 gh_repo_filters=()
 no_tags="false"
 include_topic_tags="true"
+output_file=""
 org_name=""
 
 while [[ $# -gt 0 ]]; do
@@ -48,8 +49,21 @@ while [[ $# -gt 0 ]]; do
             include_topic_tags="false"
             shift 1
             ;;
+        --output)
+            if [[ -n "${2:-}" ]]; then
+                output_file="$2"
+                shift 2
+            else
+                echo "Error: --output requires a value." >&2
+                exit 1
+            fi
+            ;;
+        --output=*)
+            output_file="${1#*=}"
+            shift 1
+            ;;
         -h|--help)
-            echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] [--archived|--no-archived] [--fork|--source] [--no-tags] [--no-topic-tags] [org_name]"
+            echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] [--archived|--no-archived] [--fork|--source] [--no-tags] [--no-topic-tags] [--output <file>] [org_name]"
             exit 0
             ;;
         -*)
@@ -106,4 +120,8 @@ cmd+=(
     --jq "$(<gh-mani.jq)"
 )
 
-"${cmd[@]}"
+if [[ -n "$output_file" ]]; then
+    "${cmd[@]}" > "$output_file"
+else
+    "${cmd[@]}"
+fi
