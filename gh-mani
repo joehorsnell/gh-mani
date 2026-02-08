@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 blobless_clone_size_limit_in_mb=""
 repo_limit="1000"
 gh_repo_filters=()
@@ -117,7 +120,7 @@ cmd+=(
     --limit "$repo_limit"
     "${gh_repo_filters[@]}"
     --json "$json_fields_csv"
-    --jq "$(<gh-mani.jq)"
+    --jq "$(<"$SCRIPT_DIR/gh-mani.jq")"
 )
 
 if [[ -n "$output_file" ]]; then
