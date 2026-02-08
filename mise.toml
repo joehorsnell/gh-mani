@@ -1,6 +1,8 @@
 [tools]
 "aqua:bats-core/bats-core" = "latest"
 delta = "latest"
+gh = "latest"
+"github:alajmo/mani" = "latest"
 jq = "latest"
 shellcheck = "latest"
 

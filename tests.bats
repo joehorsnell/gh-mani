@@ -60,3 +60,35 @@ perform_test() {
     export BLOBLESS_CLONE_SIZE_LIMIT_IN_MB=100
     perform_test "large-repos"
 }
+
+@test "integration: generate config and validate with mani" {
+    check_dependency "gh"
+    check_dependency "mani"
+
+    if ! gh auth status &> /dev/null; then
+        skip "gh is not authenticated"
+    fi
+
+    local org_name="${INTEGRATION_TEST_ORG:-cli}"
+    local tmp_config
+    local tmp_dir
+    tmp_config="$(mktemp 2>/dev/null || mktemp -t gh-mani)"
+    tmp_dir="$(mktemp -d 2>/dev/null || mktemp -d -t gh-mani)"
+
+    run gh extension remove mani
+    run gh extension install .
+    [ "$status" -eq 0 ]
+
+    run gh mani --limit 5 "$org_name"
+    [ "$status" -eq 0 ]
+    echo "$output" > "$tmp_config"
+
+    run mani -c "$tmp_config" check
+    [ "$status" -eq 0 ]
+
+    run bash -c "cd \"$tmp_dir\" && mani -c \"$tmp_config\" sync --parallel"
+    [ "$status" -eq 0 ]
+
+    rm -rf "$tmp_dir"
+    rm -f "$tmp_config"
+}
