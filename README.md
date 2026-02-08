@@ -56,6 +56,12 @@ To disable topics (still includes other tags):
 gh mani my-org --no-topic-tags
 ```
 
+Show help:
+
+```bash
+gh mani --help
+```
+
 ## Output
 
 The Mani config is printed to stdout by default, so you can pipe or redirect it anywhere:
@@ -87,3 +93,4 @@ By default, tags include:
 - `--no-tags`: omit all tags in the output.
 - `--no-topic-tags`: omit topic tags (still includes other tags).
 - `--output <file>`: write the generated Mani config to a file instead of stdout.
+- `-h`, `--help`: show help.

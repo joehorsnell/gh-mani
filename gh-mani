@@ -66,7 +66,27 @@ while [[ $# -gt 0 ]]; do
             shift 1
             ;;
         -h|--help)
-            echo "Usage: $0 [--blobless-clone-size-limit-in-mb <mb>] [--limit <n>] [--archived|--no-archived] [--fork|--source] [--no-tags] [--no-topic-tags] [--output <file>] [org_name]"
+            cat <<'EOF'
+Usage: gh mani [options] [org_name]
+
+Options:
+  --blobless-clone-size-limit-in-mb <mb>
+      Add blobless clone command for repos over this size (MB).
+  --limit <n>
+      Limit number of repos to fetch (default: 1000).
+  --archived / --no-archived
+      Include only archived / only non-archived repos.
+  --fork / --source
+      Include only forked repos / only non-fork repos.
+  --no-tags
+      Omit all tags in the output.
+  --no-topic-tags
+      Omit topic tags (still includes other tags).
+  --output <file>
+      Write output to a file instead of stdout.
+  -h, --help
+      Show this help.
+EOF
             exit 0
             ;;
         -*)
