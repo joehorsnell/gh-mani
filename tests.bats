@@ -7,6 +7,30 @@ actual_dir="tmp/fixtures/actual"
 
 mkdir -p "$actual_dir"
 
+# Global variables for cleanup
+CLEANUP_FILES=()
+CLEANUP_DIRS=()
+
+# Setup function to initialize cleanup arrays before each test
+setup() {
+    CLEANUP_FILES=()
+    CLEANUP_DIRS=()
+}
+
+# Teardown function to clean up temporary files and directories
+teardown() {
+    for file in "${CLEANUP_FILES[@]}"; do
+        if [ -f "$file" ]; then
+            rm -f "$file"
+        fi
+    done
+    for dir in "${CLEANUP_DIRS[@]}"; do
+        if [ -d "$dir" ]; then
+            rm -rf "$dir"
+        fi
+    done
+}
+
 # Check if [delta][1] is installed for a nicer diff output on failing specs, otherwise use diff.
 # [1]: https://dandavison.github.io/delta/
 if command -v delta &> /dev/null; then
@@ -75,6 +99,10 @@ perform_test() {
     tmp_config="$(mktemp 2>/dev/null || mktemp -t gh-mani)"
     tmp_dir="$(mktemp -d 2>/dev/null || mktemp -d -t gh-mani)"
 
+    # Register temp files for cleanup
+    CLEANUP_FILES+=("$tmp_config")
+    CLEANUP_DIRS+=("$tmp_dir")
+
     run gh extension remove mani
     run gh extension install .
     [ "$status" -eq 0 ]
@@ -88,7 +116,4 @@ perform_test() {
 
     run bash -c "cd \"$tmp_dir\" && mani -c \"$tmp_config\" sync --parallel"
     [ "$status" -eq 0 ]
-
-    rm -rf "$tmp_dir"
-    rm -f "$tmp_config"
 }
