@@ -11,6 +11,12 @@ mkdir -p "$actual_dir"
 CLEANUP_FILES=()
 CLEANUP_DIRS=()
 
+# Setup function to initialize cleanup arrays before each test
+setup() {
+    CLEANUP_FILES=()
+    CLEANUP_DIRS=()
+}
+
 # Teardown function to clean up temporary files and directories
 teardown() {
     for file in "${CLEANUP_FILES[@]}"; do
@@ -23,8 +29,6 @@ teardown() {
             rm -rf "$dir"
         fi
     done
-    CLEANUP_FILES=()
-    CLEANUP_DIRS=()
 }
 
 # Check if [delta][1] is installed for a nicer diff output on failing specs, otherwise use diff.
@@ -94,7 +98,7 @@ perform_test() {
     local tmp_dir
     tmp_config="$(mktemp 2>/dev/null || mktemp -t gh-mani)"
     tmp_dir="$(mktemp -d 2>/dev/null || mktemp -d -t gh-mani)"
-    
+
     # Register temp files for cleanup
     CLEANUP_FILES+=("$tmp_config")
     CLEANUP_DIRS+=("$tmp_dir")
