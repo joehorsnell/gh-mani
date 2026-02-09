@@ -30,7 +30,7 @@ Specify an org:
 gh mani my-org
 ```
 
-Write config to a file:
+Write config to a file (defaults to `mani.yaml` if no file is provided):
 
 ```bash
 gh mani my-org --output mani.yaml
@@ -84,6 +84,7 @@ By default, tags include:
 - `isFork=true|false`
 - `visibility=public|private|internal` (lowercased)
 - `topic=<topic>` (when topic tags are enabled)
+
 ## Options
 
 - `--blobless-clone-size-limit-in-mb <mb>`: adds `git clone --filter=blob:none` for repos over this size (MB). Default is `500` MB if unset. Can also be set using `BLOBLESS_CLONE_SIZE_LIMIT_IN_MB` env var.
@@ -92,5 +93,5 @@ By default, tags include:
 - `--fork` / `--source`: include only forked repos / only non-fork ("source") repos.
 - `--no-tags`: omit all tags in the output.
 - `--no-topic-tags`: omit topic tags (still includes other tags).
-- `--output <file>`: write the generated Mani config to a file instead of stdout.
+- `--output [file]`: write the generated Mani config to a file instead of stdout (default: `mani.yaml`).
 - `-h`, `--help`: show help.

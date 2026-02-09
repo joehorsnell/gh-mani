@@ -9,6 +9,7 @@ repo_limit="1000"
 gh_repo_filters=()
 no_tags="false"
 include_topic_tags="true"
+default_output_file="mani.yaml"
 output_file=""
 org_name=""
 
@@ -53,20 +54,23 @@ while [[ $# -gt 0 ]]; do
             shift 1
             ;;
         --output)
-            if [[ -n "${2:-}" ]]; then
+            if [[ -n "${2:-}" && "${2}" != -* ]]; then
                 output_file="$2"
                 shift 2
             else
-                echo "Error: --output requires a value." >&2
-                exit 1
+                output_file="$default_output_file"
+                shift 1
             fi
             ;;
         --output=*)
             output_file="${1#*=}"
+            if [[ -z "$output_file" ]]; then
+                output_file="$default_output_file"
+            fi
             shift 1
             ;;
         -h|--help)
-            cat <<'EOF'
+            cat <<EOF
 Usage: gh mani [org_name] [options]
 
 Options may appear before or after org_name.
@@ -83,8 +87,8 @@ Options:
       Omit all tags in the output.
   --no-topic-tags
       Omit topic tags (still includes other tags).
-  --output <file>
-      Write output to a file instead of stdout.
+  --output [file]
+      Write the generated Mani config to a file instead of stdout (default: \`$default_output_file\`).
   -h, --help
       Show this help.
 EOF
